@@ -35,8 +35,8 @@ cp "$GVM_ROOT/environments/$gvm_go_name" "$target_top/environments/$gvm_go_name@
 	display_fatal "Could copy environment"
 echo "export gvm_pkgset_name=\"$target_set_name_str\"" >> "$target_top/environments/$gvm_go_name@$target_set_name" ||
 	display_fatal "Could not extend environment"
-echo "export GOPATH; GOPATH=\"$add_gopath:\$GOPATH\"" >> "$target_top/environments/$gvm_go_name@$target_set_name" ||
-	display_fatal "Could not extend environment"
+#echo "export GOPATH; GOPATH=\"$add_gopath:\$GOPATH\"" >> "$target_top/environments/$gvm_go_name@$target_set_name" ||
+#	display_fatal "Could not extend environment"
 echo "export PATH; PATH=\"$add_path:\$PATH\"" >> "$target_top/environments/$gvm_go_name@$target_set_name" ||
 	display_fatal "Could not extend environment"
 
