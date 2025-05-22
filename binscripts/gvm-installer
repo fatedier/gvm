@@ -37,7 +37,7 @@ export GVM_ROOT; GVM_ROOT="$GVM_DEST/$GVM_NAME"
 export gvm_go_name; gvm_go_name="system"
 export gvm_pkgset_name; gvm_pkgset_name="global"
 export GOROOT; GOROOT="$GOROOT"
-export GOPATH; GOPATH="$GVM_DEST/$GVM_NAME/pkgsets/system/global"
+#export GOPATH; GOPATH="$GVM_DEST/$GVM_NAME/pkgsets/system/global"
 export PATH; PATH="$GVM_DEST/$GVM_NAME/pkgsets/system/global/bin:$GOROOT/bin:$GVM_ROOT/bin:\$PATH"
 EOF
 
@@ -47,15 +47,15 @@ EOF
 	# some duplicated entries when the pkgset is 'global'. Need to fix it!
 	cat << EOF >> $GVM_DEST/$GVM_NAME/environments/system@global
 export gvm_pkgset_name="global"
-export GOPATH; GOPATH="$GVM_DEST/$GVM_NAME/pkgsets/system/global:\$GOPATH"
+#export GOPATH; GOPATH="$GVM_DEST/$GVM_NAME/pkgsets/system/global:\$GOPATH"
 export PATH; PATH="$GVM_DEST/$GVM_NAME/pkgsets/system/global/bin:\$PATH"
 EOF
 }
 
-BRANCH=${1:-master}
+BRANCH=${1:-self}
 GVM_DEST=${2:-$HOME}
 GVM_NAME="gvm"
-SRC_REPO=${SRC_REPO:-https://github.com/moovweb/gvm.git}
+SRC_REPO=${SRC_REPO:-https://github.com/fatedier/gvm.git}
 
 [ "$GVM_DEST" = "$HOME" ] && GVM_NAME=".gvm"
 
